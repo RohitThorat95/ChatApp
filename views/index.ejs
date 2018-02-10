@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Chat App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="/login.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Chat App</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Login</a></li>
+        <li><a href="/signup">Register</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+  </nav>
+
+<div class="container-fluid" id="main">
+    <div class="main fixes">
+        <form action="/" method="post">
+          <h1>Log In</h1>
+
+          <% if(hasErrors) { %>
+
+               <% for(i=0 ; i < messages.length ; i++){ %>
+                 <div class="alert alert-danger test-center">
+                   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                 <%= messages[i] %><br/>
+                </div>
+               <% } %>
+
+          <% } %>
+
+            <div class="inset">
+                <p>
+                    <label for="email">EMAIL ADDRESS</label>
+                    <input type="text" name="email" placeholder="" />
+                </p>
+                <p>
+                    <label for="password">PASSWORD</label>
+                    <input type="password" name="password" placeholder="" />
+                </p>
+              </div>
+
+              <div class="buttons">
+                <button type="submit" name="button" class="btn btn-success pull-right">Login</button>
+              </div>
+        </form>
+
+        <div class="buttons">
+          <a href="/auth/facebook"><button class="btn btn-primary"><i class="fab fa-facebook "> Log In with Facebook</i></button></a>
+          <a href="/auth/google"><button class="btn btn-danger"><i class="fab fa-google"> Log In with Google</i></button></a>
+          <a href="/signup" class="btn btn-default">Not Registered?</a>
+        </div>
+    </div>
+</div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
